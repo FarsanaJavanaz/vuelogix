@@ -17,6 +17,9 @@ public class Pageclass {
 	@FindBy(xpath="//*[@id=\"main\"]/article/div/div[2]/div/div[1]/section/form/div[2]/button/div")
 	WebElement login;
 	
+	@FindBy(xpath="//*[@id=\"main\"]/article/div/div[3]/div[2]/button/span")
+	WebElement logout;
+	
 	@FindBy(xpath="//*[@id=\"main\"]/article/div/div[2]/div/div[1]/section/a/span")
 	WebElement forgetpassword;
 	
@@ -46,6 +49,10 @@ public class Pageclass {
 		password.clear();
 		password.sendKeys(passwords);
 		login.click();
+	}
+	public void logout()
+	{
+		logout.click();
 	}
 	public void button()
 	{

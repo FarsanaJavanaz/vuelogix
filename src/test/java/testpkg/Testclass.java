@@ -20,7 +20,7 @@ import utilitypkg.Excelutilities;
 
 public class Testclass extends Baseclass{
 	Pageclass ob;
-	@Test(enabled=false)
+	@Test
 	public void loginwithvalidcredentials() throws IOException
 	{
 		ob=new Pageclass(driver);
@@ -36,10 +36,11 @@ public class Testclass extends Baseclass{
 			System.out.println("password="+passwords);
 			ob.login(number, passwords);
 		}	
+		ob.logout();
 	}
 	
 	
-	@Test(enabled=false)
+	@Test
 	public void logovalidation()
 	{
 		boolean logo=driver.findElement(By.xpath("//*[@id=\"theme-app\"]/div/div/header/div[1]/a")).isDisplayed();
@@ -53,14 +54,14 @@ public class Testclass extends Baseclass{
 		}
 	}
 	
-	@Test(enabled=false)
+	@Test
 	public void buttontextvalidation()
 	{
 		ob=new Pageclass(driver);
 		ob.button();
 	}
 	
-	@Test(enabled=false)
+	@Test
 	public void tiltleverification()
 	{
 		String title=driver.getTitle();
@@ -68,7 +69,7 @@ public class Testclass extends Baseclass{
 		String exp="LOG IN / CREATE ACCOUNT - ZARA India - Official Website";
 		Assert.assertEquals(title, exp);
 	}
-	@Test(enabled=false)
+	@Test
 	public void linksvalidation() throws IOException
 	{
 		List<WebElement>li=driver.findElements(By.tagName("a"));
@@ -106,21 +107,13 @@ public class Testclass extends Baseclass{
 	{
 		ob.help();
 	}
-	@Test
-	public void registration()
-	{
-		ob.registration();	
-	}
+	
 	@Test
 	public void search()
 	{
 		ob.search();
 	}
-	@Test
-	public void shoppingbag()
-	{
-		ob.shoppingbag();	
-	}
+	
 	@Test(enabled=false)
 	public void screenshot() throws IOException
 	{
